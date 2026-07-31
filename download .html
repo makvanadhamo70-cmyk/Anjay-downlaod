@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Download ANJAY SMS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: #0b0f19;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(30, 58, 138, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(14, 116, 144, 0.3) 0%, transparent 40%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Logo Styling with Floating Animation */
+        .logo-box {
+            width: 100px;
+            height: 100px;
+            background: rgba(30, 58, 138, 0.2);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            animation: floatLogo 3s ease-in-out infinite;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .logo-box img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* App Title */
+        .app-info {
+            text-align: center;
+        }
+
+        .app-info h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+        .app-info p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 6px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.6);
+        }
+
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .download-btn:hover::after {
+            left: 100%;
+        }
+
+        .version-tag {
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* About Us & Features Section */
+        .about-card {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            font-size: 18px;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 8px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-text h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .feature-text p {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #475569;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-box">
+            <!-- Yaha logo.png file use ki gayi hai -->
+            <img src="logo.png" alt="ANJAY Logo" onerror="this.src='https://via.placeholder.com/100/1e3a8a/38bdf8?text=ANJAY'">
+        </div>
+
+        <div class="app-info">
+            <h1>ANJAY SMS</h1>
+            <p>Fast, Secure & Private Messaging Experience</p>
+        </div>
+
+        <!-- Download Button (Triggers anjay sms.apk download) -->
+        <a href="anjay sms.apk" class="download-btn" download="anjay sms.apk">
+            <span>📥 Download APK Now</span>
+        </a>
+        <div class="version-tag">Version 1.0.0 • Secure & Verified</div>
+
+        <!-- About Us & Features Section -->
+        <div class="about-card">
+            <h2>About Us & Features</h2>
+            <div class="features-list">
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-text">
+                        <h3>Full Privacy Protection</h3>
+                        <p>Aapka data aur chats puri tarah secure hain. Koi third-party access nahi hota.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>Lightning Fast UI</h3>
+                        <p>Smooth dark blue interface jo bina kisi lag ke turant kaam karta hai.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-text">
+                        <h3>End-to-End Encrypted</h3>
+                        <p>Aapke messages sirf aapke aur aapke dost ke beech rehte hain.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-text">
+                        <h3>Modern Dark Theme</h3>
+                        <p style="text-transform: none;">Ankhon ke liye aaramdayak aur stylish dark blue aesthetic design.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 ANJAY Inc. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
